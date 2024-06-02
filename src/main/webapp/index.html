@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Login</title>
+    <style>
+        body{
+            background-color: #333;
+            color: #fefefe;
+            font-family: Arial,sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1{
+            margin-bottom: 20px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            margin: 10px 0;
+        }
+        .link{
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fefefe;
+            position: relative;
+            transition: color 0.25s;
+        }
+        .link:hover{
+            background-color: #777;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 <h1>Sistema de Logueo</h1>
 <ul>
-    <li><a href="/Sesiones_war_exploded/LoginServlet">Carrito de Compras</a></li>
-    <li><a href="/Sesiones_war_exploded/ServletLogin">Login</a></li>
-    <li><a href="/Sesiones_war_exploded/ServletLogut">Logut</a></li>
+    <li><a class="link" href="/Sesiones_war_exploded/LoginServlet">Carrito de Compras</a></li>
+    <li><a class="link" href="/Sesiones_war_exploded/ServletLogin">Login</a></li>
+    <li><a class="link" href="/Sesiones_war_exploded/ServletLogut">Logut</a></li>
 </ul>
 </body>
 </html>
