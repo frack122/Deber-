@@ -1,5 +1,6 @@
 package com.login.logeo.repositorio;
 
+import com.login.logeo.controlers.ActivarProducto;
 import com.login.logeo.models.Producto1;
 
 import java.sql.*;
@@ -49,9 +50,9 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto1> {
     public void guardar(Producto1 producto1) throws SQLException {
         String sql;
         if (producto1.getId() != null && producto1.getId() > 0) {
-            sql = "UPDATE producto SET nombre ?, descripcion ?, precio ?, id_cat,art_estado=? = ? WHERE id_cat = ?";
+            sql = "UPDATE articulo SET art_nombre ?, art_descripcion ?, art_precio ?, id_cat,art_estado=? = ? WHERE id_cat = ?";
         }else {
-            sql = "INSERT INTO producto VALUES(nombre,categoria, descripcion, precio, id_cat,art_estado) VALUES(?,?,?,?,?,?) )";
+            sql = "INSERT INTO articulo (art_nombre, art_descripcion, art_precio, id_cat,art_estado) VALUES(?,?,?,?,?) )";
         }
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, producto1.getNombre());
@@ -77,6 +78,10 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto1> {
 
     @Override
     public Producto1 activar(Integer id) throws SQLException {
+        String sql = "Select art_stock From articulo WHERE id_cat = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+        }
         return null;
     }
 

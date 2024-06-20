@@ -73,6 +73,12 @@
                     <% if (usernameOptional.isPresent()) { %>
                     <td><%= p.getPrecio() %></td>
                     <td><a href="<%= request.getContextPath() %>/agregar-carro?id=<%= p.getId() %>">Agregar al carro</a></td>
+                        <form action="<%=request.getContextPath() %>" method="get">
+                            <input type="submit"value="Activar">Activaralcarro
+                        </form>
+                        <c : if test="${not empty mensaje}">
+                            <p>Mensaje :Activacion del producto</p>
+                        </c>
                     <% } %>
                 </tr>
                 <%
