@@ -2,15 +2,17 @@ package com.login.logeo.models;
 
 public class Producto1 {
 
-    private int id;
+    private Integer id;
     private String nombre;
     private String descripcion;
-    private String categoria;
+    private Categoria categoria;
     private double precio;
 
-    public Producto1(){}
+    public Producto1(){
+
+    }
    /*No podemos tener dos constructores vacio por que es sobrecarga de metodos*/
-    public Producto1(int id, String nombre, String descripcion, String categoria, double precio) {
+    public Producto1(Integer id, String nombre, String descripcion, Categoria categoria, double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -18,12 +20,14 @@ public class Producto1 {
         this.precio = precio;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+
+    public void setId(Integer id) {
         this.id = id;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -36,14 +40,22 @@ public class Producto1 {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getCategoria() {
+
+    public Categoria getCategoria() {
         return categoria;
     }
-    public void setCategoria(String categoria) {
+
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-    public double getPrecio() {return precio;}
-    public void setPrecio(double precio) {}
+
+    public double getPrecio()
+    {
+        return precio;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 }
 /*Debe tener 4 parametros id,nombre,categoria.descripcion
  * debe tener un constructor vacio

@@ -107,6 +107,7 @@ public class Servlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         out.println("<div class='container'>");
+        out.println("<form >");
         out.println("<h1>Factura</h1>");
         out.println("<table>");
         out.println("<tr>");
@@ -128,6 +129,9 @@ public class Servlet extends HttpServlet {
         double subtototal1 = subtotal *0.15;
         double totalfinal=subtototal1+subtotal;
         out.println("</table>");
+        out.println("<br>");
+        out.println("<input type=\"reset\" value=\"Reset\">");
+        out.println("</form>");
         out.println("</div>");
         out.println("<p> el subtotal del iva es : "+subtototal1);
         out.println("</p>");
