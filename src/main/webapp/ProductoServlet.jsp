@@ -31,7 +31,7 @@
     <title>Carrito de Compras</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f67f7f; }
-        .container { max-width: 600px; margin: 50px auto; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .container { max-width: 700px; margin: 50px auto; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
         h1, p { color: #333; }
         table { border-collapse: collapse; width: 100%; }
         td, th { border: 1px solid black; padding: 8px; text-align: left; }
@@ -60,6 +60,9 @@
                     <% if (usernameOptional.isPresent()) { %>
                     <th>Valor</th>
                     <th>Acción</th>
+                    <th>Stock</th>
+                    <th>Agregar Producto</th>
+                    <th>Eliminar Producto</th>
                     <% } %>
                 </tr>
                 <%
@@ -73,12 +76,9 @@
                     <% if (usernameOptional.isPresent()) { %>
                     <td><%= p.getPrecio() %></td>
                     <td><a href="<%= request.getContextPath() %>/agregar-carro?id=<%= p.getId() %>">Agregar al carro</a></td>
-                        <form action="<%=request.getContextPath() %>" method="get">
-                            <input type="submit"value="Activar">Activaralcarro
-                        </form>
-                        <c : if test="${not empty mensaje}">
-                            <p>Mensaje :Activacion del producto</p>
-                        </c>
+                    <td><%=p.getStock()%></td>
+                    <td><a href="<%= request.getContextPath() %>/Ingresarlosproductos.jsp?<%%>">Editar</a></td>
+                    <td><a href="<%= request.getContextPath() %>/ELIMINARP.jsp<%%>">Eliminar</a></td>
                     <% } %>
                 </tr>
                 <%

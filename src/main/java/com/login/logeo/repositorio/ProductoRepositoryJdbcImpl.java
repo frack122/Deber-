@@ -78,10 +78,6 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto1> {
 
     @Override
     public Producto1 activar(Integer id) throws SQLException {
-        String sql = "Select art_stock From articulo WHERE id_cat = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-
-        }
         return null;
     }
 
@@ -106,11 +102,14 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto1> {
                producto.setNombre(rs.getString("art_nombre"));
                producto.setDescripcion(rs.getString("art_descripcion"));
                producto.setPrecio(rs.getDouble("art_precio"));
+               producto.setStock(rs.getInt("art_stock"));
        }else {
            producto.setId(rs.getInt("id_art"));
            producto.setNombre(rs.getString("art_nombre"));
            producto.setDescripcion(rs.getString("art_descripcion"));
            producto.setPrecio(rs.getDouble("art_precio"));
+           producto.setStock(rs.getInt("art_stock"));
+
        }
         return producto;
     }

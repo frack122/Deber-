@@ -7,17 +7,19 @@ public class Producto1 {
     private String descripcion;
     private Categoria categoria;
     private double precio;
+    private int stock;
 
     public Producto1(){
 
     }
    /*No podemos tener dos constructores vacio por que es sobrecarga de metodos*/
-    public Producto1(Integer id, String nombre, String descripcion, Categoria categoria, double precio) {
+    public Producto1(Integer id, String nombre, String descripcion, Categoria categoria, double precio, int stock) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
         this.precio = precio;
+        this.stock = stock;
     }
 
     public Integer getId() {
@@ -55,6 +57,14 @@ public class Producto1 {
     }
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }
 /*Debe tener 4 parametros id,nombre,categoria.descripcion

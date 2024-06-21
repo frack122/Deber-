@@ -30,7 +30,8 @@ public class ConexionFilter implements Filter {
                 e.printStackTrace();
             }
         }catch (SQLException throwables){
-
+            throwables.printStackTrace();
+            ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al conectar con la base de datos");
         }
     }
 }

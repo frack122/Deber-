@@ -15,14 +15,16 @@
     <h1>INGRESO DE PRODUCTOS</h1>
 </center>
 <div class="container">
-    <form>
-        <%--@declare id="nombre"--%><label for="Nombre">Nombre del producto:</label>
-        <input name="producto" id="producto">
+    <form action="Activar" method="post">
+        <%--@declare id="idetificacion"--%><label for="id">Ingrese la id correspondiente</label>
+        <input name="id" id="id">
+        <%--@declare id="nombre"--%><label for="producto">Nombre del producto:</label>
+         <input name="producto" id="producto">
             <br>
-            <%--@declare id="Precio"--%><label for="Precio">Precio del producto:</label>
+            <%--@declare id="Precio"--%><label for="precio">Precio del producto:</label>
             <input name="precio" id="precio">
             <br>
-            <%--@declare id="Cantidad"--%><label for="Cantidad">Ingrese la cantidad:</label>
+            <%--@declare id="cantidad"--%><label for="cantidad">Ingrese la cantidad:</label>
             <input name="cantidad" id="cantidad">
         <br>
         <button type="submit">Next</button>

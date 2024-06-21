@@ -16,5 +16,13 @@ public class test
     public static Connection getConnection()throws SQLException{
         return DriverManager.getConnection(url,user,password);
     }
+    public static void main(String[] args)throws SQLException{
+        Connection con = getConnection();
+        if(con==null){
+            System.out.println("No se puede establecer la conexion");
+        }else {
+            System.out.println("Conexion exitosa");
+        }
+    }
 
 }
