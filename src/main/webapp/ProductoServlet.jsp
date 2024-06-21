@@ -47,7 +47,8 @@
             <%
                 if (usernameOptional.isPresent()) {
             %>
-            <p>Hola, <%= usernameOptional.get() %>: ¡Bienvenido!</p>
+            <div>Hola, <%= usernameOptional.get() %>: ¡Bienvenido!</div>
+            <p><a href="<%= request.getContextPath()%>/formulario">Agregar nuevos productos</a></p>
             <%
                 }
             %>

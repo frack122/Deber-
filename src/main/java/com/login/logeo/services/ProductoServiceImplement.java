@@ -1,5 +1,6 @@
 package com.login.logeo.services;
 
+import com.login.logeo.models.Categoria;
 import com.login.logeo.models.Producto1;
 
 import java.util.Arrays;
@@ -28,5 +29,15 @@ public class ProductoServiceImplement implements ProductoService {
     @Override
     public void eliminar(Integer id) {
 
+    }
+
+    @Override
+    public List<Categoria> listarCategorias() {
+        return List.of();
+    }
+
+    @Override
+    public Optional<Categoria> porIdCategoria(Integer id) {
+        return Optional.empty();
     }
 }

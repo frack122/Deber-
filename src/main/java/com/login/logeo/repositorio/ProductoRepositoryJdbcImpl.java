@@ -97,7 +97,7 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto1> {
             producto.setCategoria(categoria);
         }
        if  (producto==null){
-           producto= new Producto1();
+               producto= new Producto1();
                producto.setId(rs.getInt("id_art"));
                producto.setNombre(rs.getString("art_nombre"));
                producto.setDescripcion(rs.getString("art_descripcion"));

@@ -1,5 +1,6 @@
 package com.login.logeo.services;
 
+import com.login.logeo.models.Categoria;
 import com.login.logeo.models.Producto1;
 
 import java.util.List;
@@ -16,5 +17,10 @@ public interface ProductoService {
     void guardar(Producto1 producto);
     /*Metodo para eliminar*/
     void eliminar(Integer id);
+
+    /*Implementamos dos metodos mas para obtener la catergoria listar*/
+    List<Categoria>listarCategorias();
+    /*Implementamos un metodo el id de la categoria*/
+    Optional<Categoria>porIdCategoria(Integer id);
 
 }
