@@ -17,6 +17,48 @@
 <html>
 <head>
     <title>Ingreso de productos</title>
+    <style>
+        input {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form{max-width: 500px; margin: 0 auto;}
+        textarea {
+            width: 300px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .icon-input {
+            padding: 10px 15px 10px 45px;
+            border: 2px solid #2196F3;
+            border-radius: 25px;
+            width: 300px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f7f7f7;
+            outline: none;
+        }
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 <center>
@@ -26,15 +68,16 @@
     <form action="" method="post">
         <%--@declare id="idetificacion"--%><label for="id">Ingrese la id correspondiente</label>
         <input name="id" id="id">
+            <hr class="my-4">
         <%--@declare id="nombre"--%><label for="producto">Nombre del producto:</label>
         <input name="producto" id="producto">
-        <br>
+            <hr class="my-4">
         <%--@declare id="Precio"--%><label for="precio">Precio del producto:</label>
         <input name="precio" id="precio">
-        <br>
+            <hr class="my-4">
         <%--@declare id="cantidad"--%><label for="cantidad">Ingrese la cantidad:</label>
         <input name="cantidad" id="cantidad">
-        <br>
+            <hr class="my-4">
             <div>
                 <label for="categoria">Categoria</label>
                 <div>
@@ -46,6 +89,10 @@
                     </select>
                 </div>
             </div>
+            <hr class="my-4">
+            <h2>Comentario</h2>
+            <textarea placeholder="Escribe aquí..."></textarea>
+            <hr class="my-4">
         <button type="submit">Next</button>
     </form>
 </div>
