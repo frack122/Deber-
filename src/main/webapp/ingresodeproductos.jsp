@@ -8,7 +8,7 @@
   Time: 8:56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java.util, com.login.logeo.models.*"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*, com.login.logeo.models.*"%>
 <%
     List<Categoria>categorias=(List<Categoria>) request.getAttribute("categorias");
     Map<String , String>errores= (Map<String , String>) request.getAttribute("errores");
@@ -35,6 +35,17 @@
         <%--@declare id="cantidad"--%><label for="cantidad">Ingrese la cantidad:</label>
         <input name="cantidad" id="cantidad">
         <br>
+            <div>
+                <label for="categoria">Categoria</label>
+                <div>
+                    <select name="categoria" id="categoria">
+                        <option value="">------------Selecionar------------</option>
+                        <%for(Categoria c:categorias){%>
+                        <option value="<%=c.getIdCategoria()%>"><%=c.getNombre()%></option>
+                        <%}%>
+                    </select>
+                </div>
+            </div>
         <button type="submit">Next</button>
     </form>
 </div>

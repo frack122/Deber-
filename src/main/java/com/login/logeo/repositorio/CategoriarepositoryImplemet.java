@@ -19,7 +19,7 @@ public class CategoriarepositoryImplemet implements Repository<Categoria>{
     public List<Categoria> list() throws SQLException {
         List<Categoria> categorias = new ArrayList<>();
         try(Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from categorias");){
+            ResultSet rs = stmt.executeQuery("select * from categoria");){
             while(rs.next()){
                 Categoria categoria = getCategoria(rs);
                 categorias.add(categoria);
@@ -32,7 +32,7 @@ public class CategoriarepositoryImplemet implements Repository<Categoria>{
     @Override
     public Categoria porID(Integer id) throws SQLException {
        Categoria categoria = null;
-       try(PreparedStatement stmt = connection.prepareStatement("select * from categorias where id_cat = ?");){
+       try(PreparedStatement stmt = connection.prepareStatement("select * from categoria where id_cat = ?");){
            stmt.setInt(1, id);
            try(ResultSet rs = stmt.executeQuery()){
                if(rs.next()){
