@@ -12,7 +12,7 @@
 <%
     List<Categoria>categorias=(List<Categoria>) request.getAttribute("categorias");
     Map<String , String>errores= (Map<String , String>) request.getAttribute("errores");
-    Producto1 producto1 = (Producto1) request.getAttribute("producto1");
+    Producto1 producto = (Producto1) request.getAttribute("producto");
 %>
 <html>
 <head>
@@ -65,7 +65,7 @@
     <h1>INGRESO DE PRODUCTOS</h1>
 </center>
 <div class="container">
-    <form action="" method="post">
+    <form action="<%=request.getContextPath()%>/formulario" method="post">
         <%--@declare id="idetificacion"--%><label for="id">Ingrese la id correspondiente</label>
         <input name="id" id="id">
             <hr class="my-4">
@@ -78,6 +78,9 @@
         <%--@declare id="cantidad"--%><label for="cantidad">Ingrese la cantidad:</label>
         <input name="cantidad" id="cantidad">
             <hr class="my-4">
+            <%if(errores!=null && errores.containsKey("nombre")){%>
+            <div style="color:red;"<%=errores.get("nombre")%>></div>
+            <%}%>
             <div>
                 <label for="categoria">Categoria</label>
                 <div>
@@ -93,9 +96,11 @@
             <h2>Comentario</h2>
             <textarea placeholder="Escribe aquí..."></textarea>
             <hr class="my-4">
-        <button type="submit">Next</button>
+            <div><input type="submit" value="<%=(producto.getId()!=null && producto.getId()>0 ? "Editar":"Crear")%>"></div>
+            <input type="hidden" name="id" value="<%=producto.getId()%>">
     </form>
 </div>
 
 </body>
 </html>
+
